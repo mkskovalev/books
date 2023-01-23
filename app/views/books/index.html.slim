@@ -1,0 +1,16 @@
+h1 Books
+
+table
+  tr
+    th Title
+    th Author
+    th Year
+  - @books.each do |book|
+    tr
+      td
+        p = book.name
+      td
+        p = book.author
+      td
+        p = book.date
+
