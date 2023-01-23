@@ -1,7 +1,7 @@
 FactoryBot.define do
   factory :book do
-    name { "MyString" }
-    author { "MyString" }
+    name { "The best book ever" }
+    author { "Tomas Ford" }
     date { 1986 }
   end
 end

@@ -1,0 +1,17 @@
+= render 'shared/errors', resource: @book
+
+= form_with model: @book, local: true, data: { turbo: false } do |form|
+  p
+    => form.label :name
+    = form.text_field :name
+  p
+    => form.label :author
+    = form.text_field :author
+
+  p
+    => form.label :date
+    = form.text_field :date
+
+  = form.submit 'Save'
+
+p = link_to 'Back', books_path

@@ -1,10 +1,13 @@
 h1 Books
 
+p = link_to 'Add New Book', new_book_path
+
 table
   tr
     th Title
     th Author
     th Year
+    th colspan="2" Actions
   - @books.each do |book|
     tr
       td
@@ -13,4 +16,8 @@ table
         p = book.author
       td
         p = book.date
+      td
+        = link_to 'Edit', edit_book_path(book)
+      td
+        = link_to 'Delete', book_path(book), data: {turbo_method: :delete, turbo_confirm: 'Are you sure?'}
 
