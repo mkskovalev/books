@@ -2,6 +2,23 @@ h1 Books
 
 p = link_to 'Add New Book', new_book_path
 
+= form_tag '', :method => :get do
+  = label_tag 'name' do
+    = text_field_tag :name, nil, placeholder: 'Title'
+
+  = label_tag 'author' do
+    = select_tag :author, options_for_select(@books.collect{ |u| [u.author, u.author] }), include_blank: "All authors"
+
+  = label_tag 'min_year' do
+    = text_field_tag :min_year, nil, placeholder: 'Start Year'
+
+  = label_tag 'max_year' do
+    = text_field_tag :max_year, nil, placeholder: 'End Year'
+
+  = submit_tag 'Filter'
+
+= link_to 'Clear', books_path
+
 table
   tr
     th Title

@@ -2,7 +2,7 @@ class BooksController < ApplicationController
   before_action :find_book, only: [:edit, :update, :destroy]
 
   def index
-    @books = Book.all
+    @books = Book.filter(params.slice(:name, :author, :min_year, :max_year))
   end
 
   def new
